@@ -1,0 +1,31 @@
+---
+title: "Interacting map with leaflet"
+author: "Anne Drolet"
+date: "22 mars 2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Interacting map with leaflet
+
+Create a leaflet map :
+```{r cars}
+library(leaflet)
+map <- leaflet() 
+
+```
+
+
+Add the marker to the map and display the map :
+```{r}
+patisseriePopup <- "<a href= 'http://www.lamourdupain.com' >Patisserie l'amour du Pain Boucherville<br></a>"
+
+map %>%
+   addTiles() %>%
+   addMarkers(lat=45.598832, lng=-73.450205, popup = patisseriePopup)
+```
+
+  
